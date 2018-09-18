@@ -1,7 +1,7 @@
 pipeline {
     environment {
         registry = "vanmanhpro/node_server"
-        registryCredential = ‘dockerhub’
+        registryCredential = 'dockerhub'
     }
     agent any
 
