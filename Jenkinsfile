@@ -16,7 +16,7 @@ pipeline {
                 sh 'docker kill node_server || true && docker rm node_server || true'
                 sh 'docker build -t vanmanhpro/node_server:onJenkins .'
                 script{
-                    docker.withRegistry('https://hub.docker.com/r/vanmanhpro/node_server/', registryCredential ) {
+                    docker.withRegistry('', registryCredential ) {
                         sh 'docker push vanmanhpro/node_server:onJenkins'
                     }
                 }
