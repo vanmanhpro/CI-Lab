@@ -4,12 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cat Dockerfile'
+                echo 'Building...'
+                sh 'docker build -t nodeserver:onJenkins .'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh 'docker run -it -d -p 3000:2200 --name node_server node_server:onJenkins'
             }
         }
         stage('Deploy') {
