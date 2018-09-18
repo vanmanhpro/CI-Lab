@@ -1,4 +1,8 @@
 pipeline {
+    environment {
+        registry = "vanmanhpro/node_server"
+        registryCredential = ‘dockerhub’
+    }
     agent any
 
     triggers {
