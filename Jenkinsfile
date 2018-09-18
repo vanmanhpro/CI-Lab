@@ -9,8 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'docker kill node_server'
-                sh 'docker rm node_server'
+                sh 'docker kill node_server || true && docker rm node_server || true'
                 sh 'docker build -t node_server:onJenkins .'
             }
         }
