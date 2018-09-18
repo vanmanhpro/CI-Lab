@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'docker build -t nodeserver:onJenkins .'
+                sh 'docker build -t node_server:onJenkins .'
             }
         }
         stage('Test') {
