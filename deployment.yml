@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ci-lab
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ci-lab
+    spec:
+      containers:
+      - name: node-server
+        image: vanmanhpro/node_server:onJenkins
+        imagePullPolicy: "Always"
+        ports:
+        - name: node-server
+          containerPort: 2200

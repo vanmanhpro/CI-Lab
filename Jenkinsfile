@@ -31,6 +31,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh 'kubectl delete deployment ci-lab || true'
+                sh 'kubectl delete service ci-lab-service || true'
+                sh 'kubectl create -f deployment.yml'
+                sh 'kubectl create -f service.yml'
+                sh 'minikube service ci-lab-service'
             }
         }
     }
