@@ -31,6 +31,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh 'pwd'
+                sh 'ls'
+                sh 'cd /home/vanmanh/Desktop/practice-repos/CI-Lab'
                 sh 'kubectl delete deployment ci-lab || true'
                 sh 'kubectl delete service ci-lab-service || true'
                 sh 'kubectl create -f deployment.yml'
