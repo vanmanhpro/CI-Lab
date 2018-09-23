@@ -35,7 +35,7 @@ pipeline {
                 sh 'ls'
                 sh 'cd /home/vanmanh/Desktop/practice-repos/CI-Lab'
                 sh 'kubectl'
-                sh 'kubectl get svc'
+                sh 'kubectl get services'
                 sh 'kubectl get pods'
                 sh 'kubectl delete deployment ci-lab || true'
                 sh 'kubectl delete service ci-lab-service || true'
