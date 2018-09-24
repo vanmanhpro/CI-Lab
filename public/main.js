@@ -1,3 +1,3 @@
 function promptGreet() {
-    alert("Modified for kubernetes")
+    alert("Modified for kubernetes v2")
 }
