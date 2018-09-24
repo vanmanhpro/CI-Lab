@@ -32,6 +32,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'whoami'
+                sh 'minikube start'
                 sh 'kubectl delete deployment ci-lab || true'
                 sh 'kubectl delete service ci-lab-service || true'
                 sh 'kubectl create -f deployment.yml'
