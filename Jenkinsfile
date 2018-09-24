@@ -25,7 +25,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'docker run -it -d -p 3000:2200 --name node_server vanmanhpro/node_server:onJenkins'
+                //sh 'docker run -it -d -p 3000:2200 --name node_server vanmanhpro/node_server:onJenkins'
             }
         }
         stage('Deploy') {
